@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800&family=Jost:wght@300;400;500;600;700&display=swap");
+:root {
+  // Text color
+  --primaryColor: #333333;
+  --text-color-black: #333;
+  --text-color-white: #fff;
+
+  //   Font-size
+  --font-size10: 10px;
+  --font-size12: 12px;
+  --font-size13: 13px;
+  --font-size14: 14px;
+  --font-size15: 15px;
+  --font-size16: 16px;
+  --font-size17: 17px;
+  --font-size18: 18px;
+  --font-size20: 20px;
+  --font-size24: 24px;
+  --font-size26: 26px;
+  --font-size28: 28px;
+  --font-size30: 30px;
+  --font-size32: 32px;
+  --font-size38: 38px;
+  --font-size42: 42px;
+  --font-size45: 45px;
+  --font-size48: 48px;
+  --font-size52: 52px;
+  --font-size55: 55px;
+  --font-size58: 58px;
+  --font-size77: 77px;
+  --font-size90: 90px;
+  --font-size96: 96px;
+  --font-size120: 120px;
+  --font-size130: 130px;
+
+  //   Font-weigth
+  --font-weight-light: 300;
+  --font-weight-semiMedium: 400;
+  --font-weight-medium: 500;
+  --font-weight-semiBold: 600;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-14-line-height);
+  text-rendering: optimizeSpeed;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p {
+  margin-bottom: 0;
+}
+
+.grid {
+  width: 100%;
+  padding: 0;
+}
+.grid.wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid.wider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PC with low resolution */
+@media (min-width: 1024px) and (max-width: 1270px) {
+  .wide {
+    width: 984px;
+  }
+  .wider {
+    width: 984px;
+  }
+}
+
+/* Tablet - PC with low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .grid.wide {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .grid.wider {
+    width: 100%;
+    padding: 0 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .wide {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .wider {
+    width: 100%;
+    padding: 0 30px;
+  }
+}
