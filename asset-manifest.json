@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/test4_idocnet_ts/static/css/main.95ea327d.css",
+    "main.js": "/test4_idocnet_ts/static/js/main.08ab44c0.js",
+    "index.html": "/test4_idocnet_ts/index.html",
+    "main.95ea327d.css.map": "/test4_idocnet_ts/static/css/main.95ea327d.css.map",
+    "main.08ab44c0.js.map": "/test4_idocnet_ts/static/js/main.08ab44c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95ea327d.css",
+    "static/js/main.08ab44c0.js"
+  ]
+}
