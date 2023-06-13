@@ -1,0 +1,180 @@
+.aboutUS {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3000px;
+
+  h2 {
+    font-family: "Patua One", cursive;
+    font-size: var(--font-size42);
+    color: #444444;
+    margin: 50px 0;
+  }
+
+  .aboutUS__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .aboutUS__listItem {
+      width: 33%;
+      padding-right: 20px;
+      color: #626262;
+      line-height: 1.6;
+
+      h3 {
+        font-family: "Patua One", cursive;
+        font-size: var(--font-size24);
+        color: #ed703a;
+        margin-bottom: 20px;
+      }
+
+      .aboutUS__listItemBody {
+        font-size: var(--font-size16);
+        margin-bottom: 20px;
+
+        span {
+          border-bottom: 1px dotted #111;
+        }
+      }
+
+      .aboutUS__listItemSub {
+        font-size: var(--font-size13);
+        span {
+          border-bottom: 1px dotted #111;
+        }
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.separate {
+  p {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin: 50px 0;
+  }
+}
+
+.des {
+  position: relative;
+  background-color: #f5ece6;
+
+  .des__container {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+
+    .des__left {
+      position: relative;
+      z-index: 5;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      flex: 1;
+      color: #fff;
+      padding-right: 30px;
+
+      h1 {
+        font-family: "Patua One", cursive;
+        font-size: var(--font-size28);
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: center;
+        font-size: var(--font-size16);
+        line-height: 1.6;
+      }
+
+      .button {
+        position: relative;
+        z-index: 4;
+
+        width: 140px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: #f7f7f7;
+        margin-top: 30px;
+        border-radius: 5px;
+        background: linear-gradient(to left, #f7f7f7 50%, #e0dbdb 50%) right;
+        background-size: 200%;
+        transition: 0.2s ease-out;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 40%;
+          color: #6f6f6f;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          font-size: var(--font-size13);
+          color: #6f6f6f;
+
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0;
+        //   background-color: #dedede;
+
+        //   width: 40%;
+        //   height: 100%;
+        //   top: 0;
+        //   z-index: -1;
+        // }
+
+        &:hover {
+          background-position: left;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .des__right {
+      display: flex;
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: "Patua One", cursive;
+        font-size: var(--font-size30);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ed703a;
+
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,54 @@
+.wrapper {
+  height: 84px;
+  background-color: #545454;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+
+    .author {
+      display: flex;
+      align-items: center;
+      font-size: var(--font-size12);
+      height: 100%;
+
+      p {
+        color: #aaa;
+      }
+
+      a {
+        color: #ed703a;
+        margin-left: 5px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        height: 15%;
+        border-right: 1px solid #ccc;
+        margin: 0 5px;
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: var(--font-size13);
+      color: #aaa;
+
+      i {
+        margin-left: 15px;
+
+        &:hover {
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  //   display: flex;
+  flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+
+  .inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.slider-item {
+  position: relative;
+  display: inline-flex;
+
+  width: 100%;
+  height: 700px;
+
+  .slider-text {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translateX(-50%);
+  }
+  //   .slidr-item1-img {
+  //     width: 100%;
+  //     height: 100%;
+  //     background-image: url("https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-1-bg.jpg");
+  //     background-size: 100% 100%;
+  //     // background-size: cover;
+  //     background-repeat: no-repeat;
+  //   }
+
+  //   .slidr-item2-img {
+  //     width: 100%;
+  //     height: 100%;
+  //     background-image: url("https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-2-bg.jpg");
+  //     background-size: 100% 100%;
+
+  //     background-repeat: no-repeat;
+  //   }
+
+  //   .text {
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+
+  //     p {
+  //       text-align: center;
+  //       font-size: var(--font-size20);
+  //       color: #fff;
+  //     }
+  //   }
+}
+
+.slider-choose {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+
+  .slider-choose-btn {
+    font-size: var(--font-size20);
+    display: flex;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #111;
+      color: #fff;
+      margin-left: 20px;
+
+      &:last-child {
+        margin-right: 40px;
+      }
+    }
+  }
+}
