@@ -93,7 +93,22 @@ const Our = () => {
             </div>
           </div>
           <div className={cx("des__right")}>
-            <h1>Client testimonials</h1>
+            <p>
+              <span>
+                Sed elementum ante et lectus sagittis rhoncus! Sed eu mollis
+              </span>
+              <span>
+                metus, et luctus eros. Duis ut dolor eleifend, scelerisque
+                sapien
+              </span>
+              <span> vel, convallis sem. Etiam nullam.</span>
+              <i className={cx("fa-solid fa-quote-right", "qoute")}></i>
+            </p>
+
+            <div>
+              <i className="fa-solid fa-user"></i>
+              Alice Boys
+            </div>
           </div>
         </div>
       </div>
