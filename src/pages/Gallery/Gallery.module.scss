@@ -12,12 +12,37 @@
     padding: 50px 0 100px 0;
 
     .list__iamgeItem {
+      position: relative;
+      overflow: hidden;
       width: 25%;
+      height: 240px;
       padding: 10px;
 
-      img {
+      .img {
+        position: relative;
+        overflow: hidden;
         width: 100%;
         height: 100%;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 120%;
+        }
+
+        &:hover img {
+          animation: hoverImg linear 0.3s;
+          top: -15px;
+        }
+
+        @keyframes hoverImg {
+          from {
+            top: 0;
+          }
+          to {
+            top: -15px;
+          }
+        }
       }
 
       &:hover {
@@ -117,7 +142,6 @@
 
 .list {
   display: flex;
-  // height: 500px;
 
   .info {
     width: 50%;
@@ -151,16 +175,39 @@
     margin-bottom: 100px;
     .list__iamgeItem {
       width: 33%;
+      height: 150px;
       padding: 10px;
 
-      img {
+      .img {
+        position: relative;
+        overflow: hidden;
         width: 100%;
         height: 100%;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 120%;
+        }
+
+        &:hover img {
+          animation: hoverImg linear 0.3s;
+          top: -15px;
+        }
+
+        @keyframes hoverImg {
+          from {
+            top: 0;
+          }
+          to {
+            top: -15px;
+          }
+        }
       }
 
       &:hover {
         cursor: pointer;
-        opacity: 0.8;
+        opacity: 0.7;
       }
     }
   }
@@ -249,6 +296,29 @@
       background-color: rgba(0, 0, 0, 0);
       color: #fff;
       font-size: var(--font-size14);
+    }
+  }
+}
+
+/* Tablet - PC with low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .list__iamgeItem {
+    width: 50% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .list__iamgeItem {
+    width: 100% !important;
+    height: 330px !important;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    .info {
+      width: 100%;
     }
   }
 }

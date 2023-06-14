@@ -11,7 +11,7 @@
     .author {
       display: flex;
       align-items: center;
-      font-size: var(--font-size12);
+      font-size: var(--font-size10);
       height: 100%;
 
       p {
@@ -50,5 +50,14 @@
         }
       }
     }
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

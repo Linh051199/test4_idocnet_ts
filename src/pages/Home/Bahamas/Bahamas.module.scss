@@ -1,60 +1,134 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.wrapper {
   height: 100%;
-
-  h2 {
-    font-family: "Patua One", cursive;
-    font-size: var(--font-size24);
-    color: var(--primaryColor);
-
-    width: 30%;
-  }
-
-  .link {
-    flex: 1;
-
-    display: flex;
-    justify-content: center;
+  .container {
     align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+    h2 {
+      font-family: "Patua One", cursive;
+      font-size: var(--font-size24);
+      color: var(--primaryColor);
 
-    p {
+      width: 30%;
+    }
+
+    .link {
+      flex: 1;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      border: 3px solid #ec703a;
 
-      i {
-        font-size: var(--font-size30);
-        color: #ec703a;
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid #ec703a;
+
+        i {
+          font-size: var(--font-size30);
+          color: #ec703a;
+        }
+
+        &:hover {
+          border-color: red;
+          cursor: pointer;
+        }
+
+        &:hover i {
+          color: red;
+          cursor: pointer;
+        }
       }
 
-      &:hover {
-        border-color: red;
-        cursor: pointer;
-      }
-
-      &:hover i {
-        color: red;
-        cursor: pointer;
-      }
+      // &:before {
+      //   content: "";
+      //   border: 20px solid;
+      //   border-color: transparent transparent transparent #ec703a;
+      // }
     }
 
-    // &:before {
-    //   content: "";
-    //   border: 20px solid;
-    //   border-color: transparent transparent transparent #ec703a;
-    // }
+    p {
+      font-size: var(--font-size13);
+      font-weight: var(--font-weight-light);
+      width: 30%;
+    }
   }
 
-  p {
-    font-size: var(--font-size13);
-    font-weight: var(--font-weight-light);
-    width: 30%;
+  .containerShow {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+
+    animation: ShowBahamas linear 0.5s;
+    h2 {
+      font-family: "Patua One", cursive;
+      font-size: var(--font-size24);
+      color: var(--primaryColor);
+
+      width: 30%;
+    }
+
+    .link {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid #ec703a;
+
+        i {
+          font-size: var(--font-size30);
+          color: #ec703a;
+        }
+
+        &:hover {
+          border-color: red;
+          cursor: pointer;
+        }
+
+        &:hover i {
+          color: red;
+          cursor: pointer;
+        }
+      }
+
+      // &:before {
+      //   content: "";
+      //   border: 20px solid;
+      //   border-color: transparent transparent transparent #ec703a;
+      // }
+    }
+
+    p {
+      font-size: var(--font-size13);
+      font-weight: var(--font-weight-light);
+      width: 30%;
+    }
+
+    @keyframes ShowBahamas {
+      from {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   }
 }
 

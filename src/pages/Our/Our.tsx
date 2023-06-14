@@ -10,8 +10,8 @@ import CarouselOur from "./CarouselOur/CarouselOur";
 const cx = classNames.bind(styles);
 
 const Our = () => {
-  const [numberIsVisible, setNumberIsVisible] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
+  const [numberIsVisible, setNumberIsVisible] = useState<boolean>(false);
 
   const numberRef: any = useRef(null);
 

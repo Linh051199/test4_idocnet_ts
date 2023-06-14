@@ -54,7 +54,9 @@ const Gallery = () => {
                 className={cx("list__iamgeItem")}
                 onClick={() => handleShowCarousel1(index)}
               >
-                <img src={item.src} alt="img" />
+                <div className={cx("img")}>
+                  <img src={item.src} alt="img" />
+                </div>
               </div>
             ))}
           </div>
@@ -77,7 +79,9 @@ const Gallery = () => {
               className={cx("list__iamgeItem")}
               onClick={() => handleShowCarousel2(index)}
             >
-              <img src={item.src} alt="img" />
+              <div className={cx("img")}>
+                <img src={item.src} alt="img" />
+              </div>
             </div>
           ))}
         </div>

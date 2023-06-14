@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Home.module.scss";
@@ -12,6 +12,19 @@ import HeaderFixed from "../../components/HeaderFixed/HeaderFixed";
 const cx = classNames.bind(styles);
 const Home = () => {
   const [show, setShow] = useState<boolean>(false);
+  const [footerBottom2IsVisible, setFooterBottom2IsVisible] = useState(false);
+
+  const footerBottom2Ref: any = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setFooterBottom2IsVisible(true);
+      }
+    });
+    observer.observe(footerBottom2Ref.current);
+  }, []);
 
   const controlHeader = () => {
     if (window.scrollY > 200) {
@@ -32,7 +45,7 @@ const Home = () => {
 
       <HeaderHome />
       <div className={cx("welcome", "grid", "wide")}>
-        <div className={cx("welcome__header")}>
+        <div className={cx("welcome__header__show")}>
           <h2>Welcome</h2>
           <p>
             Boutique shopping. Underwater cave explorations. Bonefishing
@@ -58,40 +71,46 @@ const Home = () => {
         </div>
 
         <div className={cx("welcome__body")}>
-          <div className={cx("welcome__item")}>
-            <h2>Welness & Spa</h2>
-            <img
-              src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_1.jpg"
-              alt="img"
-            />
-            <p>
-              The country club is fervent in providing the best tourist
-              destinations all over the country.
-            </p>
+          <div className={cx("welcome__itemContainer")}>
+            <div className={cx("welcome__item1")}>
+              <h2>Welness & Spa</h2>
+              <img
+                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_1.jpg"
+                alt="img"
+              />
+              <p>
+                The country club is fervent in providing the best tourist
+                destinations all over the country.
+              </p>
+            </div>
           </div>
-
-          <div className={cx("welcome__item")}>
-            <h2>Business meetings</h2>
-            <img
-              src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_2.jpg"
-              alt="img"
-            />
-            <p>
-              Book business conference facilities. Arrange your next business
-              meeting or conference event.
-            </p>
+          <div className={cx("welcome__itemContainer")}>
+            {" "}
+            <div className={cx("welcome__item2")}>
+              <h2>Business meetings</h2>
+              <img
+                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_2.jpg"
+                alt="img"
+              />
+              <p>
+                Book business conference facilities. Arrange your next business
+                meeting or conference event.
+              </p>
+            </div>
           </div>
-
-          <div className={cx("welcome__item")}>
-            <h2>Restaurant</h2>
-            <img
-              src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_3.jpg"
-              alt="img"
-            />
-            <p>
-              Spend your dining experiences at the best restaurants, combining a
-              blend of the world's gourmet flavors.
-            </p>
+          <div className={cx("welcome__itemContainer")}>
+            {" "}
+            <div className={cx("welcome__item3")}>
+              <h2>Restaurant</h2>
+              <img
+                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_3.jpg"
+                alt="img"
+              />
+              <p>
+                Spend your dining experiences at the best restaurants, combining
+                a blend of the world's gourmet flavors.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -119,7 +138,14 @@ const Home = () => {
             </div>
           </div>
 
-          <div className={cx("welcome__fotterItem2")}>
+          <div
+            ref={footerBottom2Ref}
+            className={
+              footerBottom2IsVisible
+                ? cx("welcome__fotterItem2Show")
+                : cx("welcome__fotterItem2")
+            }
+          >
             <div className={cx("welcome__fotterItem2__header")}>
               <h2>Services</h2>
               <p>

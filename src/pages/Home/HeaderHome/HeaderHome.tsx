@@ -32,7 +32,7 @@ const HeaderHome = () => {
           style={{ transform: `translate(-${activeIndex * 100}%)` }}
         >
           {dataHomeCarousel.map((item, index) => (
-            <CarouselHomeItem data={item} index={index} />
+            <CarouselHomeItem key={index} data={item} index={index} />
           ))}
           {/* <CarouselHomeItem1 />
           <CarouselHomeItem2 /> */}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Bahamas.module.scss";
@@ -8,20 +8,38 @@ const cx = classNames.bind(styles);
 
 const Bahamas = () => {
   const [showVideo, setShowVideo] = useState(false);
-  return (
-    <div className={cx("container", "grid", "wide")}>
-      <h2>See what the bahamas are</h2>
+  const [bahamasIsVisible, setBahamasIsVisible] = useState(false);
 
-      <div className={cx("link")} onClick={() => setShowVideo(true)}>
+  const bahamasRef: any = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setBahamasIsVisible(true);
+      }
+    });
+    observer.observe(bahamasRef.current);
+  }, []);
+  return (
+    <div className={cx("wrapper", "grid", "wide")}>
+      <div
+        ref={bahamasRef}
+        className={bahamasIsVisible ? cx("containerShow") : cx("container")}
+      >
+        <h2>See what the bahamas are</h2>
+
+        <div className={cx("link")} onClick={() => setShowVideo(true)}>
+          <p>
+            <i className="fa-solid fa-play"></i>
+          </p>
+        </div>
         <p>
-          <i className="fa-solid fa-play"></i>
+          It's better in the Bahamas! Welcome to the Out Islands of the Bahamas,
+          or as we like to call it the REAL Bahamas. This video is about the
+          island of Eleuthera and Harbour Island.
         </p>
       </div>
-      <p>
-        It's better in the Bahamas! Welcome to the Out Islands of the Bahamas,
-        or as we like to call it the REAL Bahamas. This video is about the
-        island of Eleuthera and Harbour Island.
-      </p>
 
       {showVideo && (
         <div className={cx("video")}>
