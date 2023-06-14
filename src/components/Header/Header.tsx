@@ -51,9 +51,9 @@ const Header: React.FC<IProps> = ({ active, title }) => {
             </Link>
 
             <div className={cx("header__bottomNav__list")}>
-              <a>
+              <Link to={"/test4_idocnet_ts/"}>
                 <span>Home</span>
-              </a>
+              </Link>
 
               <Link
                 to={"/test4_idocnet_ts/our"}

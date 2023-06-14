@@ -27,7 +27,7 @@ const Carousel = () => {
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {items.map((item) => {
+        {items?.map((item) => {
           return <CarouselItem item={item} width={"100%"} height={"100%"} />;
         })}
       </div>

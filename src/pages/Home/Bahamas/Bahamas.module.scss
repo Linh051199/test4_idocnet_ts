@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  h2 {
+    font-family: "Patua One", cursive;
+    font-size: var(--font-size24);
+    color: var(--primaryColor);
+
+    width: 30%;
+  }
+
+  .link {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #ec703a;
+
+      i {
+        font-size: var(--font-size30);
+        color: #ec703a;
+      }
+
+      &:hover {
+        border-color: red;
+        cursor: pointer;
+      }
+
+      &:hover i {
+        color: red;
+        cursor: pointer;
+      }
+    }
+
+    // &:before {
+    //   content: "";
+    //   border: 20px solid;
+    //   border-color: transparent transparent transparent #ec703a;
+    // }
+  }
+
+  p {
+    font-size: var(--font-size13);
+    font-weight: var(--font-weight-light);
+    width: 30%;
+  }
+}
+
+.video {
+  position: relative;
+  z-index: 99;
+
+  .video__btnClose {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 20px;
+    opacity: 0.7;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+    i {
+      font-size: var(--font-size30);
+      color: #fff;
+    }
+  }
+
+  .video__overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .video__container {
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+  }
+}

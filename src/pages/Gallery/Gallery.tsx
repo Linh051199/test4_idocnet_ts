@@ -48,7 +48,7 @@ const Gallery = () => {
       <div className={cx("iamge", "grid")}>
         <div className={cx("list__iamge", "grid", "wide")}>
           <div className={cx("list__iamge__container")}>
-            {dataGalleryCarouel1.map((item, index) => (
+            {dataGalleryCarouel1?.map((item, index) => (
               <div
                 key={item.id}
                 className={cx("list__iamgeItem")}
@@ -71,7 +71,7 @@ const Gallery = () => {
           </p>
         </div>
         <div className={cx("list__image")}>
-          {dataGalleryCarouel2.map((item, index) => (
+          {dataGalleryCarouel2?.map((item, index) => (
             <div
               key={item.id}
               className={cx("list__iamgeItem")}

@@ -23,9 +23,12 @@ const HeaderFixed: React.FC<IProps> = ({ active }) => {
             </div>
           </Link>
           <div className={cx("header__bottomNav__list")}>
-            <a>
+            <Link
+              to={"/test4_idocnet_ts/"}
+              className={active === "home" ? cx("active") : cx("")}
+            >
               <span>Home</span>
-            </a>
+            </Link>
 
             <Link
               to={"/test4_idocnet_ts/our"}

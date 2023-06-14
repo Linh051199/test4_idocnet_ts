@@ -1,14 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import classNames from "classnames/bind";
 import styles from "./Our.module.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import HeaderFixed from "../../components/HeaderFixed/HeaderFixed";
+import Number from "./Number";
+import CarouselOur from "./CarouselOur/CarouselOur";
 
 const cx = classNames.bind(styles);
 
 const Our = () => {
+  const [numberIsVisible, setNumberIsVisible] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
+
+  const numberRef: any = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+
+      if (entry.isIntersecting) {
+        setNumberIsVisible(true);
+      }
+    });
+    observer.observe(numberRef.current);
+  }, []);
+
   const controlHeader = () => {
     if (window.scrollY > 200) {
       setShow(true);
@@ -75,6 +92,8 @@ const Our = () => {
         <p></p>
       </div>
 
+      <CarouselOur />
+
       <div className={cx("des")}>
         <div className={cx("des__container", "grid", "wide")}>
           <div className={cx("des__left")}>
@@ -111,6 +130,10 @@ const Our = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div ref={numberRef} className={cx("number")}>
+        {numberIsVisible && <Number />}
       </div>
       <Footer />
     </div>
