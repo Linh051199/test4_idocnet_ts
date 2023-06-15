@@ -17,7 +17,7 @@
 
     .aboutUS__listItem {
       width: 33%;
-      padding-right: 20px;
+      padding: 0 20px;
       color: #626262;
       line-height: 1.6;
 
@@ -79,7 +79,7 @@
       height: 100%;
       flex: 1;
       color: #fff;
-      padding-right: 30px;
+      padding: 0 30px;
 
       h1 {
         font-family: "Patua One", cursive;
@@ -106,6 +106,8 @@
         background: linear-gradient(to left, #f7f7f7 50%, #dac6c6 50%) right;
         background-size: 200%;
         transition: 0.2s ease-out;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+          inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
 
         div {
           position: absolute;
@@ -160,6 +162,8 @@
           border-radius: 5px;
           top: 0;
           z-index: -100;
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+            inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
         }
 
         &:hover {
@@ -178,7 +182,7 @@
       height: 100%;
       width: 50%;
       display: flex;
-      padding-left: 70px;
+      padding: 0 20px 0 70px;
 
       p {
         position: relative;
@@ -229,16 +233,173 @@
   }
 }
 
+.desMobile {
+  display: none;
+  flex-direction: column;
+  background-color: #ec703a;
+  .des__left {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    flex: 1;
+    color: #fff;
+    padding: 0 30px;
+    margin: 50px 0;
+
+    h1 {
+      font-family: "Patua One", cursive;
+      font-size: var(--font-size28);
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      font-size: var(--font-size16);
+      line-height: 1.6;
+    }
+
+    .button {
+      position: relative;
+      z-index: 4;
+
+      width: 160px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      margin-right: 20px;
+      border-radius: 5px;
+      background: linear-gradient(to left, #f7f7f7 50%, #dac6c6 50%) right;
+      background-size: 200%;
+      transition: 0.2s ease-out;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+        inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
+
+      div {
+        position: absolute;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 30%;
+        color: #6f351c;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: var(--font-size14);
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-color: rgba(236, 211, 211, 0.739);
+
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          top: 0;
+          z-index: -100;
+        }
+      }
+      p {
+        position: absolute;
+        z-index: 99;
+        margin-left: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex: 1;
+        font-size: var(--font-size13);
+        color: #747474;
+
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(247, 239, 239, 0.739);
+
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        top: 0;
+        z-index: -100;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+          inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
+      }
+
+      &:hover {
+        background-position: left;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .des__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 20px 0 70px;
+    margin-bottom: 50px;
+
+    p {
+      position: relative;
+      z-index: 2;
+      font-family: "Patua One", cursive;
+      font-size: var(--font-size17);
+      color: #444444;
+      line-height: 31px;
+      margin-bottom: 20px;
+
+      span {
+        width: 100%;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+      }
+      .qoute {
+        position: absolute;
+        z-index: 0;
+        top: -30px;
+        left: -40px;
+        font-size: var(--font-size70);
+        opacity: 0.3;
+      }
+    }
+
+    div {
+      font-size: var(--font-size12);
+      color: #a8a8a8;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
 .number {
-  height: 300px;
   background-color: #fcfcfc;
 
   .number__container {
     display: flex;
-    width: 100%;
+    // width: 100%;
     height: 100%;
     justify-content: space-between;
-    padding-top: 40px;
+    padding: 40px 20px 0 20px;
 
     .number__item {
       display: flex;
@@ -247,6 +408,7 @@
       justify-content: center;
       width: 25%;
       height: 100%;
+      padding: 0 10px;
 
       h2 {
         font-family: "Patua One", cursive;
@@ -255,6 +417,7 @@
       }
 
       p {
+        text-align: center;
         font-family: "Patua One", cursive;
         font-size: var(--font-size24);
         color: #444444;
@@ -270,6 +433,63 @@
         font-size: var(--font-size13);
         font-weight: var(--font-weight-light);
         line-height: 1.8;
+      }
+    }
+  }
+}
+
+/* Tablet - PC with low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .number__item {
+    h2 {
+      font-size: var(--font-size77) !important ;
+    }
+
+    p {
+      font-size: var(--font-size20) !important ;
+    }
+
+    h4 {
+      font-size: var(--font-size10) !important ;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .aboutUS__list {
+    flex-direction: column;
+    width: 100%;
+
+    .aboutUS__listItem {
+      width: 100% !important;
+      margin-bottom: 50px;
+
+      h3 {
+        margin-bottom: 10px !important;
+      }
+
+      .aboutUS__listItemBody {
+        margin-bottom: 10px !important;
+      }
+    }
+  }
+
+  .des {
+    display: none;
+  }
+
+  .desMobile {
+    display: flex;
+  }
+
+  .number {
+    .number__container {
+      display: flex;
+      flex-direction: column;
+
+      .number__item {
+        width: 100%;
       }
     }
   }

@@ -16,7 +16,6 @@ const Carousel1: React.FC<IProps> = ({
   currIndexCarouselImage1,
 }) => {
   const [currIndex, setCurrIndex] = useState(currIndexCarouselImage1);
-  console.log("🚀 ~ currIndex:", currIndex);
 
   const handleClickImage = () => {
     if (currIndex === 6) {

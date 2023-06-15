@@ -18,7 +18,7 @@ const CarouselHomeItem: React.FC<IProps> = ({ data, index }) => {
         <img src={data.img} alt="img" />
       </div>
       <div className={cx("carousel__itemText")}>
-        <img src={data.text} alt="img" />
+        {index === data.id ? <img src={data.text} alt="img" /> : <div></div>}
       </div>
     </div>
   );

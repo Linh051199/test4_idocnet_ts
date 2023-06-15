@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Home.module.scss";
-import Carousel from "./Carousel/Carousel";
 import HeaderHome from "./HeaderHome/HeaderHome";
 import Plan from "./Plan/Plan";
 import Footer from "../../components/Footer/Footer";
@@ -13,8 +12,10 @@ const cx = classNames.bind(styles);
 const Home = () => {
   const [show, setShow] = useState<boolean>(false);
   const [footerBottom2IsVisible, setFooterBottom2IsVisible] = useState(false);
+  const [welcomeBodyIsVisible, setWelcomeBodyIsVisible] = useState(false);
 
   const footerBottom2Ref: any = useRef(null);
+  const welcomeBodyRef: any = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -24,6 +25,16 @@ const Home = () => {
       }
     });
     observer.observe(footerBottom2Ref.current);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setWelcomeBodyIsVisible(true);
+      }
+    });
+    observer.observe(welcomeBodyRef.current);
   }, []);
 
   const controlHeader = () => {
@@ -70,14 +81,20 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={cx("welcome__body")}>
+        <div
+          ref={welcomeBodyRef}
+          className={welcomeBodyIsVisible ? cx("welcome__body") : cx("")}
+        >
           <div className={cx("welcome__itemContainer")}>
             <div className={cx("welcome__item1")}>
               <h2>Welness & Spa</h2>
-              <img
-                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_1.jpg"
-                alt="img"
-              />
+              <div className={cx("img")}>
+                <img
+                  src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_1.jpg"
+                  alt="img"
+                />
+              </div>
+
               <p>
                 The country club is fervent in providing the best tourist
                 destinations all over the country.
@@ -85,13 +102,14 @@ const Home = () => {
             </div>
           </div>
           <div className={cx("welcome__itemContainer")}>
-            {" "}
             <div className={cx("welcome__item2")}>
               <h2>Business meetings</h2>
-              <img
-                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_2.jpg"
-                alt="img"
-              />
+              <div className={cx("img")}>
+                <img
+                  src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_2.jpg"
+                  alt="img"
+                />
+              </div>
               <p>
                 Book business conference facilities. Arrange your next business
                 meeting or conference event.
@@ -102,10 +120,12 @@ const Home = () => {
             {" "}
             <div className={cx("welcome__item3")}>
               <h2>Restaurant</h2>
-              <img
-                src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_3.jpg"
-                alt="img"
-              />
+              <div className={cx("img")}>
+                <img
+                  src="https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/hotel_box_3.jpg"
+                  alt="img"
+                />
+              </div>
               <p>
                 Spend your dining experiences at the best restaurants, combining
                 a blend of the world's gourmet flavors.

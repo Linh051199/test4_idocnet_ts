@@ -70,11 +70,13 @@ export const dataGalleryCarouel2: IGalleryCarousel[] = [
 
 export const dataHomeCarousel: IHomeCarousel[] = [
   {
+    id: 0,
     img: "https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-2-bg.jpg",
     text: "https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/slide-hotel-2-1.png",
   },
 
   {
+    id: 1,
     img: "https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-1-bg.jpg",
     text: "https://themes.muffingroup.com/be/hotel/wp-content/uploads/2015/02/slide-hotel-1-1.png",
   },

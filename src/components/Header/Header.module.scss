@@ -4,8 +4,131 @@
   flex-direction: column;
   height: 335px;
   background-image: url(https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-1-bg.jpg);
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.header__res {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+
+  .header__resTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+
+    .header__resTopInfo {
+      display: flex;
+      margin: 10px 0;
+      font-size: var(--font-size13);
+      .header__topInfoItem {
+        display: flex;
+        margin-left: 20px;
+        i {
+          margin-right: 10px;
+        }
+        p {
+          color: red;
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .header__resTopIcon {
+      display: flex;
+      font-size: var(--font-size13);
+      color: #bbbbbb;
+
+      i {
+        margin-left: 15px;
+
+        &:hover {
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .header__resBottom {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .header__bottomNav__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+
+      img {
+        width: 60%;
+      }
+    }
+
+    .header__btnMenu {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      margin-right: 20px;
+      font-size: var(--font-size20);
+      color: #ed703a;
+      cursor: pointer;
+    }
+
+    .header__menuRes {
+      position: absolute;
+      z-index: 99;
+      top: 100%;
+      right: 0;
+      animation: showMenuRes linear 0.3s;
+
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+
+      .header__menuResItem {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: var(--font-size14);
+        margin: 0 25px;
+        height: 44px;
+        cursor: pointer;
+      }
+
+      .header__menuResActive {
+        color: #ed703a !important;
+      }
+
+      @keyframes showMenuRes {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+        to {
+          top: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 .main {
   display: flex;
@@ -126,6 +249,51 @@
           &:last-child span {
             border-right: none;
             color: #bbbbbb;
+          }
+        }
+      }
+
+      .header__btnMenu {
+        display: none;
+        font-size: var(--font-size20);
+        margin-right: 30px;
+        cursor: pointer;
+      }
+
+      .header__menuRes {
+        position: absolute;
+        z-index: 99;
+        top: 100%;
+        right: 0;
+        animation: showMenuRes linear 0.3s;
+
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 300px;
+
+        .header__menuResItem {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: var(--font-size14);
+          margin: 0 25px;
+          height: 44px;
+          cursor: pointer;
+        }
+
+        .header__menuResActive {
+          color: #ed703a !important;
+        }
+
+        @keyframes showMenuRes {
+          from {
+            top: 0;
+            opacity: 0;
+          }
+          to {
+            top: 100%;
+            opacity: 1;
           }
         }
       }
@@ -269,5 +437,42 @@
         margin: 0 20px;
       }
     }
+  }
+}
+
+/* Tablet - PC with low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .header__bottomNav {
+    justify-content: space-between !important;
+    width: 100%;
+
+    .header__btnMenu {
+      display: block !important;
+    }
+  }
+  .header__bottomNav__list {
+    display: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background-image: url(https://themes.muffingroup.com/be/hotel/wp-content/uploads/revslider/hotel/slide-hotel-1-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .header__res {
+    display: flex;
+  }
+  .main {
+    display: none !important;
+  }
+  .sub {
+    margin-top: 147px;
   }
 }

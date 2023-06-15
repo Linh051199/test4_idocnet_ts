@@ -4,6 +4,7 @@ export interface IGalleryCarousel {
 }
 
 export interface IHomeCarousel {
+  id: number;
   img: string;
   text: string;
 }

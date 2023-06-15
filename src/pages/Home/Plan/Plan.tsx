@@ -80,14 +80,117 @@ const Plan = () => {
       </div>
 
       <div className={cx("footer")}>
-        <div className={cx("footer__container", "grid", "wide")}>
+        <div
+          ref={monthlyRef}
+          className={cx("footer__container", "grid", "wide")}
+        >
           <h2>Choose your perfect monthly plan</h2>
 
           <div className={cx("footer__list")}>
-            <div ref={monthlyRef} className={cx("footer__list__item")}>
+            <div className={cx("footer__list__item")}>
               <div
                 className={
                   monthlyIsVisible ? cx("footer__item1") : cx("footer__item")
+                }
+              >
+                <div className={cx("footer__item__list")}>
+                  <p>Including breakfast</p>
+                  <p>Room Service</p>
+                  <p>Number of childrens</p>
+                  <p>Lunch/Dinner</p>
+                  <p>Parking</p>
+                </div>
+              </div>
+            </div>
+            <div className={cx("footer__list__item")}>
+              <div className={cx("footer__item")}>
+                <h2>Basic</h2>
+
+                <div className={cx("footer__item__price")}>
+                  <sub className={cx("footer__item__priceTitle")}>$</sub>
+                  <p>29</p>
+                  <sub>/monthly</sub>
+                </div>
+
+                <div className={cx("footer__item__priceSeparateTop")}></div>
+
+                <div className={cx("footer__item__list")}>
+                  <p>YES</p>
+                  <p>Not available</p>
+                  <p>0</p>
+                  <p className={cx("no")}>
+                    <i className="fa-solid fa-circle"></i>
+                  </p>
+                  <p>NO</p>
+                </div>
+
+                <div className={cx("footer__item__btn")}>
+                  <p>Sign up now</p>
+                </div>
+              </div>
+            </div>
+            <div className={cx("footer__list__item")}>
+              {" "}
+              <div className={cx("footer__item", "footer__itemActive")}>
+                <h2>Standard</h2>
+
+                <div className={cx("footer__item__price")}>
+                  <sub className={cx("footer__item__priceTitle")}>$</sub>
+                  <p>39</p>
+                  <sub>/monthly</sub>
+                </div>
+
+                <div className={cx("footer__item__priceSeparateTop")}></div>
+
+                <div className={cx("footer__item__list")}>
+                  <p>YES</p>
+                  <p>Available</p>
+                  <p>up to 2</p>
+                  <p className={cx("active")}>
+                    <i className="fa-solid fa-circle"></i>
+                  </p>
+                  <p>NO</p>
+                </div>
+
+                <div className={cx("footer__item__btn")}>
+                  <p>Sign up now</p>
+                </div>
+              </div>
+            </div>
+            <div className={cx("footer__list__item")}>
+              <div className={cx("footer__item")}>
+                <h2>Professional</h2>
+
+                <div className={cx("footer__item__price")}>
+                  <sub className={cx("footer__item__priceTitle")}>$</sub>
+                  <p>49</p>
+                  <sub>/monthly</sub>
+                </div>
+
+                <div className={cx("footer__item__priceSeparateTop")}></div>
+
+                <div className={cx("footer__item__list")}>
+                  <p>YES</p>
+                  <p>Available</p>
+                  <p>up to 4</p>
+                  <p className={cx("active")}>
+                    <i className="fa-solid fa-circle"></i>
+                  </p>
+                  <p>YES</p>
+                </div>
+
+                <div className={cx("footer__item__btn")}>
+                  <p>Sign up now</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={cx("footer__listMobile")}>
+            <div ref={monthlyRef} className={cx("footer__list__item")}>
+              <div
+                className={
+                  monthlyIsVisible ? cx("footer__item") : cx("footer__item")
                 }
               >
                 <div className={cx("footer__item__list")}>

@@ -64,13 +64,14 @@
     justify-content: space-between;
     display: flex;
     height: 100%;
+    margin: 30px 0;
 
     animation: ShowBahamas linear 0.5s;
     h2 {
       font-family: "Patua One", cursive;
       font-size: var(--font-size24);
       color: var(--primaryColor);
-
+      text-align: center;
       width: 30%;
     }
 
@@ -80,12 +81,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 30px 0;
 
       p {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70px;
+        width: 70px !important;
         height: 70px;
         border-radius: 50%;
         border: 3px solid #ec703a;
@@ -105,12 +107,6 @@
           cursor: pointer;
         }
       }
-
-      // &:before {
-      //   content: "";
-      //   border: 20px solid;
-      //   border-color: transparent transparent transparent #ec703a;
-      // }
     }
 
     p {
@@ -175,5 +171,18 @@
     transform: translate(-50%, -50%);
     width: 90%;
     height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .containerShow {
+    flex-direction: column;
+    h2 {
+      width: 100% !important;
+    }
+    p {
+      width: 100% !important;
+    }
   }
 }

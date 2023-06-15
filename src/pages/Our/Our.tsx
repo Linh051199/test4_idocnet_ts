@@ -132,7 +132,45 @@ const Our = () => {
         </div>
       </div>
 
-      <div ref={numberRef} className={cx("number")}>
+      <div className={cx("desMobile")}>
+        <div className={cx("desMobile__container", "grid", "wide")}>
+          <div className={cx("des__left")}>
+            <h1>Client testimonials</h1>
+            <p>
+              Vestibulum quis nulla tortor. Donec diam leo, bibendum a risus et,
+              interdum iaculis ligula. Donec ultricies elit ultricies est
+              sollicitudin, et dignissim metus.
+            </p>
+
+            <div className={cx("button")}>
+              <div className="button__link">
+                <i className="fa-solid fa-link"></i>
+              </div>
+              <p>See more</p>
+            </div>
+          </div>
+          <div className={cx("des__right")}>
+            <p>
+              <span>
+                Sed elementum ante et lectus sagittis rhoncus! Sed eu mollis
+              </span>
+              <span>
+                metus, et luctus eros. Duis ut dolor eleifend, scelerisque
+                sapien
+              </span>
+              <span> vel, convallis sem. Etiam nullam.</span>
+              <i className={cx("fa-solid fa-quote-right", "qoute")}></i>
+            </p>
+
+            <div>
+              <i className="fa-solid fa-user"></i>
+              Alice Boys
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ref={numberRef} className={cx("number", "grid")}>
         {numberIsVisible && <Number />}
       </div>
       <Footer />

@@ -48,6 +48,8 @@
         background: linear-gradient(to left, #f7f7f7 50%, #dac6c6 50%) right;
         background-size: 200%;
         transition: 0.2s ease-out;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+          inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
 
         div {
           position: absolute;
@@ -103,6 +105,8 @@
           border-radius: 5px;
           top: 0;
           z-index: -100;
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+            inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
         }
 
         &:hover {
@@ -125,6 +129,8 @@
         background: linear-gradient(to left, #f7f7f7 50%, #d3bebe 50%) right;
         background-size: 200%;
         transition: 0.2s ease-out;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+          inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
 
         div {
           position: absolute;
@@ -179,6 +185,8 @@
           border-radius: 5px;
           top: 0;
           z-index: -100;
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+            inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
         }
 
         &:hover {
@@ -204,21 +212,23 @@
     overflow: hidden;
     display: flex;
     justify-content: space-between;
-    // width: 100%;
-    height: 350px;
 
     .welcome__itemContainer {
-      overflow: hidden;
+      // overflow: hidden;
       position: relative;
       width: 30%;
       display: flex;
+      height: 350px;
       .welcome__item1,
       .welcome__item2,
       .welcome__item3 {
+        position: relative;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
+        height: 100%;
 
         h2 {
           font-family: "Patua One", cursive;
@@ -227,8 +237,34 @@
           color: var(--primaryColor);
         }
 
-        img {
+        .img {
+          position: relative;
+          overflow: hidden;
           width: 100%;
+          height: 100%;
+
+          img {
+            position: absolute;
+            width: 100%;
+            height: 120%;
+          }
+          &:hover img {
+            animation: hoverImg linear 0.3s;
+            top: -15px;
+          }
+
+          @keyframes hoverImg {
+            from {
+              top: 0;
+            }
+            to {
+              top: -15px;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+          }
         }
 
         p {
@@ -345,6 +381,8 @@
           background: linear-gradient(to left, #f7f7f7 50%, #d3bebe 50%) right;
           background-size: 200%;
           transition: 0.2s ease-out;
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+            inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
 
           div {
             position: absolute;
@@ -401,6 +439,8 @@
             border-radius: 5px;
             top: 0;
             z-index: -100;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+              inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
           }
 
           &:hover {
@@ -562,6 +602,46 @@
 .bahamas {
   position: relative;
   z-index: 99;
-  height: 151px;
+  // height: 151px;
   background-color: #d6c5b2;
+}
+
+/* Tablet - PC with low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .welcome__header__btns {
+    flex-direction: column;
+    align-items: center;
+
+    .button1 {
+      margin-right: 0 !important;
+    }
+
+    .button2 {
+      margin-right: 0 !important;
+    }
+  }
+
+  .welcome__body {
+    flex-direction: column;
+
+    .welcome__itemContainer {
+      width: 100% !important;
+    }
+  }
+  .welcome__fotter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    .welcome__fotterItem1,
+    .welcome__fotterItem2Show,
+    .welcome__fotterItem3 {
+      width: 100% !important;
+      margin-bottom: 50px;
+    }
+  }
 }

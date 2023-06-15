@@ -203,39 +203,103 @@ h4 {
 
 .carouselBtn {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  .carouselBtn__Item {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #d6d6d6;
-    margin: 0 10px;
+  justify-content: space-between;
+  width: 100%;
+
+  .btn__prevRes,
+  .btn__nextRes {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
+      inset 0px 4px 3px -2px rgba(0, 0, 0, 0.07);
+    background: linear-gradient(to left, #eaeaea 50%, #e7dbdb 50%) right;
+    background-size: 200%;
+    transition: 0.2s ease-out;
+    margin-top: 5px;
+    display: none;
+
+    i {
+      font-size: var(--font-size16);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(250, 10, 10, 0.739);
+
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      top: 0;
+      z-index: -100;
+    }
 
     &:hover {
+      background-position: left;
       cursor: pointer;
-      background-color: #bdbdbd;
     }
   }
 
-  .carouselBtn__ItemActive {
-    position: relative;
-    width: 12px;
-    height: 12px;
-    margin: 0 10px;
-    background-color: #ec703a;
-    cursor: pointer;
-    border-radius: 2px;
+  .carouselBtn___list {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    .carouselBtn__Item {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #d6d6d6;
+      margin: 0 10px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: -11px;
-      left: 0;
-      border: 6px solid;
-      border-color: transparent transparent #ec703a transparent;
+      &:hover {
+        cursor: pointer;
+        background-color: #bdbdbd;
+      }
     }
+
+    .carouselBtn__ItemActive {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      margin: 0 10px;
+      background-color: #ec703a;
+      cursor: pointer;
+      border-radius: 2px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -11px;
+        left: 0;
+        border: 6px solid;
+        border-color: transparent transparent #ec703a transparent;
+      }
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .btn__prev,
+  .btn__next {
+    display: none !important;
+  }
+  .btn__prevRes,
+  .btn__nextRes {
+    display: flex !important;
+  }
+
+  .carousel {
+    width: 100% !important;
   }
 }
